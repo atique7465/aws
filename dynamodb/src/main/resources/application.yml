@@ -1,0 +1,35 @@
+spring.application.name: dynamodb
+
+#################### Server Configuration ####################
+server:
+  port: 8090
+  servlet.context-path: /dynamodb-1.0
+  tomcat:
+    accept-count: 100
+    threads:
+      min-spare: 10
+      max: 200
+
+#################### Management Configuration ####################
+management:
+  server:
+    port: 8091
+  info:
+    git.enabled: true
+    build.enabled: true
+  endpoints.web.exposure.include: '*'
+
+#################### AWS Configuration ####################
+amazon:
+  aws:
+    accesskey: accesskey
+    secretkey: secretkey
+    region: region
+  dynamodb:
+    endpoint: endpoint
+    connection:
+      maxsize: 100
+      timeout: 5000
+      socket:
+        timeout: 5000
+
