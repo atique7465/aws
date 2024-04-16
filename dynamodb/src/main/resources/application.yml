@@ -10,23 +10,14 @@ server:
       min-spare: 10
       max: 200
 
-#################### Management Configuration ####################
-management:
-  server:
-    port: 8091
-  info:
-    git.enabled: true
-    build.enabled: true
-  endpoints.web.exposure.include: '*'
-
 #################### AWS Configuration ####################
 amazon:
   aws:
-    accesskey: accesskey
-    secretkey: secretkey
-    region: region
+    accesskey: <aws-iam-access-key>
+    secretkey: <aws-iam-secret-key>
+    region: <aws-dynamodb-region>
   dynamodb:
-    endpoint: endpoint
+    endpoint: dynamodb.<aws-dynamodb-region>.amazonaws.com
     connection:
       maxsize: 100
       timeout: 5000
